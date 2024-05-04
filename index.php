@@ -82,7 +82,7 @@
 										<a class='btn btn-primary btn-sm' href='/Student_Registration_Form/editStudentDetails.php?id=$row[roll]'> Edit
 											<!-- <i class='bi bi-pencil-square'></i>  -->
 										</a>&nbsp;
-										<a class='delete btn btn-danger btn-sm' data-confirm='Do you want to delete the student details with rollno $row[roll] ?' href='/Student_Registration_Form/deleteStudentDetails.php?id=$row[roll]'> Delete
+										<a class='delete btn btn-danger btn-sm' data-confirm='Do you want to delete the student details of rollno $row[roll] ?' href='/Student_Registration_Form/deleteStudentDetails.php?id=$row[roll]'> Delete
 											<!-- <i class='bi bi-trash-fill'></i> -->
 										</a>
 									</td>
