@@ -20,7 +20,7 @@
     if( $_SERVER['REQUEST_METHOD'] == 'GET') {
         
         if ( !isset($_GET["id"])) {
-            header("location: /Project/index.php");
+            header("location: /Student_Registration_Form/index.php");
             exit;
         }
         
@@ -31,7 +31,7 @@
         $row = $result->fetch_assoc();
 
         if( !$row) {
-            header("location: /Project/index.php");
+            header("location: /Student_Registration_Form/index.php");
             exit;
         }
 
@@ -69,7 +69,7 @@
     
             $successMessage = "Client Updated Successfully";
     
-            header("location: /Project/index.php");
+            header("location: /Student_Registration_Form/index.php");
             exit;
     
         } while(true);
@@ -163,7 +163,7 @@
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="/Project/index.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="/Student_Registration_Form/index.php" role="button">Cancel</a>
                     </div>
                 </div> 
             </form>

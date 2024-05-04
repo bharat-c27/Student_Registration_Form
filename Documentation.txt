@@ -1,0 +1,13 @@
+Encountered many issues while handling the error from the sqli and the backened
+
+- database constraints for input
+- backend validation for input
+- handling the null values for db, bkend
+
+
+Functionalities added 
+
+- adding constraint at database
+#1 checking gender
+#2 phone number format
+#3 

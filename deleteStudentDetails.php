@@ -14,6 +14,6 @@
         $connection->query($sql);
     }
 
-    header("location: /Project/index.php");
+    header("location: /Student_Registration_Form/index.php");
     exit;
 ?>
