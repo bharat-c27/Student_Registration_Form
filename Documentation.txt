@@ -10,4 +10,11 @@ Functionalities added
 - adding constraint at database
 #1 checking gender
 #2 phone number format
-#3 
+#3 unique email
+
+- Handled Errors and Success msg
+#1 Record added or updated are displayed on the index page
+#2 Record not meeting constraint will get error msgs
+
+- Added triggers and regular expression to the database
+

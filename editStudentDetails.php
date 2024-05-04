@@ -59,15 +59,26 @@
             $sql = "UPDATE students " . 
                     "SET roll = '$roll', name = '$name', email = '$email', phone = '$phone', gender = '$gender'" . 
                     "WHERE roll = $roll";
-    
-            $result = $connection->query($sql);
-    
-            if (!$result) {
-                $errorMessage = "Invalid Query : " . $connection->error;
+            
+            try {
+                
+                if ($connection->query($sql) === TRUE) {
+                    $successMessage =  "Student registered successfully";
+
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+
+                }
+
+            } catch (mysqli_sql_exception $e) {
+                $errorMessage = $e->getMessage();
                 break;
+
             }
-    
-            $successMessage = "Client Updated Successfully";
+            
+            // Set a session variable to indicate success
+            session_start();
+            $_SESSION['success_message'] = "Student details updated successfully!";
     
             header("location: /Student_Registration_Form/index.php");
             exit;
@@ -82,11 +93,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Student Registration</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
-    "> </link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> </link>
     </head>
     <body>
-
         <div class="row">
             <div class="col">
                 <h1 class="bg-primary text-white p-4 text-center shadow-sm">Edit Student Details</h1>
@@ -141,22 +150,6 @@
                         <input type="text" class="form-control" name="gender" value="<?php echo $gender; ?>">
                     </div>
                 </div> 
-
-                <?php 
-                if( !empty($successMessage) ) {
-
-                    echo "
-                    <div class='row-mb-3'>
-                        <div class='offset-sm-3 col-sm-6'>
-                            <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                                <strong>$successMessage</strong>
-                                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close></button>
-                            </div>
-                        </div>
-                    </div> 
-                    ";
-                }
-                ?>
 
                 <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
