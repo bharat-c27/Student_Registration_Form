@@ -3,10 +3,10 @@
     if ( !isset($_GET["roll"])) {
         $roll = $_GET["id"];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "#Squl3.8.1P";
-        $database = "mini-project";
+        $servername = "";
+        $username = "";
+        $password = "";
+        $database = "";
     
         $connection = new mysqli($servername, $username, $password, $database);
         
